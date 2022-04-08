@@ -3,6 +3,8 @@ import 'package:flutter_wordpress_challenge/model/happy_theme.dart';
 
 import '../model/post.dart';
 
+/// added content
+
 class FlutterWordPressHomePage extends StatefulWidget {
   const FlutterWordPressHomePage({Key? key, required this.title})
       : super(key: key);
@@ -69,9 +71,26 @@ class _FlutterWordPressHomePageState extends State<FlutterWordPressHomePage> {
                                   style: HappyTheme.answerStyle,
                                 ),
                               ),
-                            )
+                            ),
                           ],
                         ),
+                        subtitle: Container(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Text(
+                            snapshot.data![index]['content']['rendered']
+                                .toString()
+                                .replaceAll('<p>', '')
+                                .replaceAll('</p>', '')
+                                .replaceAll('<strong>', '')
+                                .replaceAll('</strong>', ''),
+                            maxLines: 4,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(
+                              fontSize: 20.0,
+                            ),
+                          ),
+                        ),
+                        onTap: () {},
                       ),
                     );
                   },
