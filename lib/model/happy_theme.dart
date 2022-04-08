@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 ///
 
 class HappyTheme {
-  static TextStyle answerStyle = GoogleFonts.langar(
+  static TextStyle titleStyle = GoogleFonts.langar(
     textStyle: const TextStyle(
       color: HappyTheme.answerColor,
       fontSize: 20.0,
@@ -30,10 +30,10 @@ class HappyTheme {
     ),
   );
 
-  static TextStyle questionStyle = GoogleFonts.laila(
+  static TextStyle postContentStyle = GoogleFonts.lato(
     textStyle: const TextStyle(
       color: HappyTheme.shrineBrown600,
-      fontSize: 30.0,
+      fontSize: 20.0,
       fontWeight: FontWeight.bold,
     ),
   );
@@ -46,18 +46,18 @@ class HappyTheme {
     ),
   );
 
-  static TextStyle dilligenceStyle = GoogleFonts.laila(
+  static TextStyle contentStyle = GoogleFonts.lato(
     textStyle: const TextStyle(
       color: HappyTheme.shrineSurfaceWhite,
-      fontSize: 40.0,
+      fontSize: 18.0,
       fontWeight: FontWeight.bold,
     ),
   );
 
-  static TextStyle resultStyle = GoogleFonts.laila(
+  static TextStyle postTitleStyle = GoogleFonts.laila(
     textStyle: const TextStyle(
-      color: HappyTheme.shrineSurfaceWhite,
-      fontSize: 25.0,
+      color: HappyTheme.shrinePink400,
+      fontSize: 35.0,
       fontWeight: FontWeight.bold,
     ),
   );

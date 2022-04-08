@@ -60,17 +60,22 @@ class _FlutterWordPressHomePageState extends State<FlutterWordPressHomePage> {
                       child: ListTile(
                         title: Row(
                           children: [
-                            /* Expanded(
-                              child: Image.network(snapshot.data![index]
-                                      ['_embeded']['wp:featuredmedia'][0]
-                                  ['source_url']),
-                            ), */
+                            Expanded(
+                              child: Container(
+                                padding: const EdgeInsets.all(8.0),
+                                width: 150,
+                                height: 150,
+                                child: Image.network(snapshot.data![index]
+                                        ['_embedded']['wp:featuredmedia'][0]
+                                    ['source_url']),
+                              ),
+                            ),
                             Expanded(
                               child: Container(
                                 padding: const EdgeInsets.all(10.0),
                                 child: Text(
                                   snapshot.data![index]['title']['rendered'],
-                                  style: HappyTheme.answerStyle,
+                                  style: HappyTheme.titleStyle,
                                 ),
                               ),
                             ),
@@ -87,9 +92,7 @@ class _FlutterWordPressHomePageState extends State<FlutterWordPressHomePage> {
                                 .replaceAll('</strong>', ''),
                             maxLines: 4,
                             overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(
-                              fontSize: 20.0,
-                            ),
+                            style: HappyTheme.contentStyle,
                           ),
                         ),
                         onTap: () {

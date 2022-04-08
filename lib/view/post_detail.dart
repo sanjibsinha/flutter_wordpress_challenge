@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_wordpress_challenge/model/happy_theme.dart';
 
 class PostDetail extends StatelessWidget {
   const PostDetail({
@@ -11,7 +12,7 @@ class PostDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Post detail'),
+        title: const Text('Back Home'),
       ),
       body: ListView(
         children: [
@@ -29,6 +30,17 @@ class PostDetail extends StatelessWidget {
             height: 10.0,
           ),
           Container(
+            padding: const EdgeInsets.all(8.0),
+            width: 450,
+            height: 450,
+            child: ClipOval(
+              child: Image.network(
+                data['_embedded']['wp:featuredmedia'][0]['source_url'],
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          Container(
             padding: const EdgeInsets.all(10.0),
             child: Text(
               data['content']['rendered']
@@ -37,9 +49,7 @@ class PostDetail extends StatelessWidget {
                   .replaceAll('</p>', '')
                   .replaceAll('<strong>', '')
                   .replaceAll('</strong>', ''),
-              style: const TextStyle(
-                fontSize: 20.0,
-              ),
+              style: HappyTheme.postContentStyle,
             ),
           ),
         ],
