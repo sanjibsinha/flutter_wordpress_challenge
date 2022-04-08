@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 
 class Post {
   String baseURL =
-      'http://algorithm.sanjibsinha.com/wp-json/wp/v2/posts?_embed';
+      'http://news.sanjibsinha.com/wp-json/wp/v2/posts?_embed';
 
   Future<List> getAllPosts() async {
     try {

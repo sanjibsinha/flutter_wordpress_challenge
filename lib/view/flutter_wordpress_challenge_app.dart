@@ -11,7 +11,8 @@ class FlutterWordPressChallengeApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter WordPress Challenge',
       theme: happyTheme.buildTheme(),
       home:
           const FlutterWordPressHomePage(title: 'Flutter WordPress Challenge'),
