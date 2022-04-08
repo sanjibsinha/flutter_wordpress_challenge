@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_wordpress_challenge/model/happy_theme.dart';
 
 import '../model/post.dart';
+import 'post_detail.dart';
 
 /// added content
+/// adding the navigation
 
 class FlutterWordPressHomePage extends StatefulWidget {
   const FlutterWordPressHomePage({Key? key, required this.title})
@@ -90,7 +92,16 @@ class _FlutterWordPressHomePageState extends State<FlutterWordPressHomePage> {
                             ),
                           ),
                         ),
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => PostDetail(
+                                data: snapshot.data![index],
+                              ),
+                            ),
+                          );
+                        },
                       ),
                     );
                   },
