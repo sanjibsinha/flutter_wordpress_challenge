@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -92,7 +91,10 @@ class _MyHomePageState extends State<MyHomePage> {
                               child: Container(
                                 padding: const EdgeInsets.all(10.0),
                                 child: Text(
-                                  snapshot.data![index]['title']['rendered'],
+                                  snapshot.data![index]['title']['rendered']
+                                      .toString()
+                                      .replaceAll('<p>', '')
+                                      .replaceAll('</p>', ''),
                                   style: const TextStyle(
                                     fontSize: 30.0,
                                     fontWeight: FontWeight.bold,
@@ -102,6 +104,23 @@ class _MyHomePageState extends State<MyHomePage> {
                             )
                           ],
                         ),
+                        subtitle: Container(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Text(
+                            snapshot.data![index]['content']['rendered']
+                                .toString()
+                                .replaceAll('<p>', '')
+                                .replaceAll('</p>', '')
+                                .replaceAll('<strong>', '')
+                                .replaceAll('</strong>', ''),
+                            maxLines: 4,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(
+                              fontSize: 20.0,
+                            ),
+                          ),
+                        ),
+                        onTap: () {},
                       ),
                     );
                   },
