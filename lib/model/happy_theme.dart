@@ -8,7 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 class HappyTheme {
   static TextStyle titleStyle = GoogleFonts.langar(
     textStyle: const TextStyle(
-      color: HappyTheme.answerColor,
+      color: HappyTheme.shrineBrown600,
       fontSize: 20.0,
       fontWeight: FontWeight.bold,
     ),
@@ -48,7 +48,7 @@ class HappyTheme {
 
   static TextStyle contentStyle = GoogleFonts.lato(
     textStyle: const TextStyle(
-      color: HappyTheme.shrineSurfaceWhite,
+      color: HappyTheme.shrineBrown900,
       fontSize: 18.0,
       fontWeight: FontWeight.bold,
     ),

@@ -56,7 +56,6 @@ class _FlutterWordPressHomePageState extends State<FlutterWordPressHomePage> {
                     return Card(
                       elevation: 10.0,
                       shadowColor: HappyTheme.shrineErrorRed,
-                      color: HappyTheme.inactiveCoor,
                       child: ListTile(
                         title: Row(
                           children: [
