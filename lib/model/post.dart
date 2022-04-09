@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-/// fourth test to test latest post by category ID
+/// fourth and fifth steps to test latest post by category ID
 
 class Post {
   String baseURLForAllPosts =
