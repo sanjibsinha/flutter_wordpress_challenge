@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../view/categories/posts_by_category_id_three.dart';
+
 import '../view/categories/posts_by_category_id_one.dart';
 import 'dashboard_drawer.dart';
 import '../view/latest_posts.dart';
 import '../view/categories/posts_by_category_id_two.dart';
+import '../view/categories/posts_by_category_id_three.dart';
+import '../view/categories/posts_by_category_id_four.dart';
 
 class DashBoardHome extends StatefulWidget {
   const DashBoardHome({
@@ -18,11 +20,14 @@ class DashBoardHome extends StatefulWidget {
 class _DashBoardHomeState extends State<DashBoardHome>
     with SingleTickerProviderStateMixin {
   TabController? _tabController;
+
   final List<Tab> topTabs = <Tab>[
     const Tab(child: Text('LATEST')),
-    const Tab(child: Text('POPULAR')),
+    const Tab(child: Text('OVERALL')),
     const Tab(child: Text('BUSINESS')),
     const Tab(child: Text('ENTERTAINMENT')),
+    //const Tab(child: Text('TSET')),
+    const Tab(child: Text('FASHION')),
   ];
 
   @override
@@ -32,6 +37,7 @@ class _DashBoardHomeState extends State<DashBoardHome>
           ..addListener(() {
             setState(() {});
           });
+
     super.initState();
   }
 
@@ -40,7 +46,7 @@ class _DashBoardHomeState extends State<DashBoardHome>
       await SystemNavigator.pop();
     }
 
-    Future.delayed(const Duration(microseconds: 200), () {
+    Future.delayed(const Duration(microseconds: 100), () {
       _tabController?.index = 0;
     });
 
@@ -95,6 +101,7 @@ class _DashBoardHomeState extends State<DashBoardHome>
               controller: _tabController,
               indicatorColor: Colors.black,
               tabs: topTabs,
+              isScrollable: true,
             ),
           ),
           endDrawer: Container(
@@ -110,6 +117,8 @@ class _DashBoardHomeState extends State<DashBoardHome>
               PostsByCategoryIDOne(),
               PostsByCategoryIDTwo(),
               PostsByCategoryIDThree(),
+              //TestPage(),
+              PostsByCategoryIDFour(),
             ],
           ),
         ),
