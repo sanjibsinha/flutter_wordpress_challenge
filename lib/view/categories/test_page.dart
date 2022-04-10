@@ -1,31 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_wordpress_challenge/model/category_id_three.dart';
 
-import '../../model/category_id_one.dart';
+import '../../model/category_id_two.dart';
 import '../../model/happy_theme.dart';
 import '../post_detail.dart';
 
 /// in sixth step, we will try to get posts by category ID
 ///
 
-class PostsByCategoryIDOne extends StatefulWidget {
-  const PostsByCategoryIDOne({
-    Key? key,
-  }) : super(key: key);
+class TestPage extends StatefulWidget {
+  const TestPage({Key? key}) : super(key: key);
 
   @override
-  State<PostsByCategoryIDOne> createState() => _PostsByCategoryIDOneState();
+  State<TestPage> createState() => _TestPageState();
 }
 
-class _PostsByCategoryIDOneState extends State<PostsByCategoryIDOne> {
+class _TestPageState extends State<TestPage> {
   @override
   void initState() {
     super.initState();
-    CategoryIDOne().getAllPostsByCategoryIDOne();
+    //CategoryIDTwo().getAllPostsByCategoryIDTwo();
+    CategoryIDThree().getAllPostsByCategoryIDThree();
   }
 
   @override
   Widget build(BuildContext context) {
-    CategoryIDOne postsOfCategoryIDOne = CategoryIDOne();
+    CategoryIDThree postsOfCategoryIDThree = CategoryIDThree();
     return Scaffold(
       backgroundColor: HappyTheme.shrineErrorRed,
       appBar: AppBar(
@@ -40,7 +40,7 @@ class _PostsByCategoryIDOneState extends State<PostsByCategoryIDOne> {
           color: HappyTheme.shrinePink300,
           margin: const EdgeInsets.all(8.0),
           child: FutureBuilder<List>(
-            future: postsOfCategoryIDOne.getAllPostsByCategoryIDOne(),
+            future: postsOfCategoryIDThree.getAllPostsByCategoryIDThree(),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 if (snapshot.data!.isEmpty) {

@@ -1,31 +1,29 @@
 import 'package:flutter/material.dart';
 
-import '../../model/category_id_one.dart';
+import '../../model/category_id_four.dart';
 import '../../model/happy_theme.dart';
 import '../post_detail.dart';
 
 /// in sixth step, we will try to get posts by category ID
 ///
 
-class PostsByCategoryIDOne extends StatefulWidget {
-  const PostsByCategoryIDOne({
-    Key? key,
-  }) : super(key: key);
+class PostsByCategoryIDFour extends StatefulWidget {
+  const PostsByCategoryIDFour({Key? key}) : super(key: key);
 
   @override
-  State<PostsByCategoryIDOne> createState() => _PostsByCategoryIDOneState();
+  State<PostsByCategoryIDFour> createState() => _PostsByCategoryIDFourState();
 }
 
-class _PostsByCategoryIDOneState extends State<PostsByCategoryIDOne> {
+class _PostsByCategoryIDFourState extends State<PostsByCategoryIDFour> {
   @override
   void initState() {
     super.initState();
-    CategoryIDOne().getAllPostsByCategoryIDOne();
+    CategoryIDFour().getAllPostsByCategoryIDFour();
   }
 
   @override
   Widget build(BuildContext context) {
-    CategoryIDOne postsOfCategoryIDOne = CategoryIDOne();
+    CategoryIDFour postsOfCategoryIDFour = CategoryIDFour();
     return Scaffold(
       backgroundColor: HappyTheme.shrineErrorRed,
       appBar: AppBar(
@@ -40,7 +38,7 @@ class _PostsByCategoryIDOneState extends State<PostsByCategoryIDOne> {
           color: HappyTheme.shrinePink300,
           margin: const EdgeInsets.all(8.0),
           child: FutureBuilder<List>(
-            future: postsOfCategoryIDOne.getAllPostsByCategoryIDOne(),
+            future: postsOfCategoryIDFour.getAllPostsByCategoryIDFour(),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 if (snapshot.data!.isEmpty) {
