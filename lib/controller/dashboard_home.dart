@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dashboard_drawer.dart';
 import '../view/latest_posts.dart';
-import '../view/posts_by_category.dart';
+import '../view/categories/posts_by_category.dart';
 
 class DashBoardHome extends StatefulWidget {
   const DashBoardHome({
@@ -18,7 +18,7 @@ class _DashBoardHomeState extends State<DashBoardHome>
   TabController? _tabController;
   final List<Tab> topTabs = <Tab>[
     const Tab(child: Text("LATEST")),
-    const Tab(child: Text("POPULAR")),
+    const Tab(child: Text("BUSINESS")),
   ];
 
   @override
@@ -103,7 +103,7 @@ class _DashBoardHomeState extends State<DashBoardHome>
               /// all categories displayed on tabs
               ///
               LatestPosts(),
-              PostsByCategory(),
+              PostsByCategoryIDTwo(),
             ],
           ),
         ),
