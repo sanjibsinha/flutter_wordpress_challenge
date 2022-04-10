@@ -1,39 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wordpress_challenge/model/happy_theme.dart';
 
-import '../model/post.dart';
+import '../model/all_posts.dart';
 import 'post_detail.dart';
 
 /// added content
 /// adding the navigation
 
-class FlutterWordPressHomePage extends StatefulWidget {
-  const FlutterWordPressHomePage({Key? key, required this.title})
-      : super(key: key);
-
-  final String title;
+class LatestPosts extends StatefulWidget {
+  const LatestPosts({
+    Key? key,
+  }) : super(key: key);
 
   @override
-  State<FlutterWordPressHomePage> createState() =>
-      _FlutterWordPressHomePageState();
+  State<LatestPosts> createState() => _LatestPostsState();
 }
 
-class _FlutterWordPressHomePageState extends State<FlutterWordPressHomePage> {
+class _LatestPostsState extends State<LatestPosts> {
   @override
   void initState() {
     super.initState();
-    Post().getAllPosts();
+    AllPosts().getAllPosts();
   }
 
   @override
   Widget build(BuildContext context) {
-    Post posts = Post();
+    AllPosts posts = AllPosts();
     return Scaffold(
       backgroundColor: HappyTheme.shrineErrorRed,
       appBar: AppBar(
         backgroundColor: HappyTheme.shrineBrown600,
         title: Text(
-          widget.title,
+          'Flutter WordPress',
           style: HappyTheme.appbarStyle,
         ),
       ),
