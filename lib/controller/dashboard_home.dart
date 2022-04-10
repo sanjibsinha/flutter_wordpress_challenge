@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../view/categories/posts_by_category_id_three.dart';
+import '../view/categories/posts_by_category_id_one.dart';
 import 'dashboard_drawer.dart';
 import '../view/latest_posts.dart';
-import '../view/categories/posts_by_category.dart';
+import '../view/categories/posts_by_category_id_two.dart';
 
 class DashBoardHome extends StatefulWidget {
   const DashBoardHome({
@@ -17,8 +19,10 @@ class _DashBoardHomeState extends State<DashBoardHome>
     with SingleTickerProviderStateMixin {
   TabController? _tabController;
   final List<Tab> topTabs = <Tab>[
-    const Tab(child: Text("LATEST")),
-    const Tab(child: Text("BUSINESS")),
+    const Tab(child: Text('LATEST')),
+    const Tab(child: Text('POPULAR')),
+    const Tab(child: Text('BUSINESS')),
+    const Tab(child: Text('ENTERTAINMENT')),
   ];
 
   @override
@@ -103,7 +107,9 @@ class _DashBoardHomeState extends State<DashBoardHome>
               /// all categories displayed on tabs
               ///
               LatestPosts(),
+              PostsByCategoryIDOne(),
               PostsByCategoryIDTwo(),
+              PostsByCategoryIDThree(),
             ],
           ),
         ),
