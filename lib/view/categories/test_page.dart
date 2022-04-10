@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_wordpress_challenge/model/category_id_three.dart';
+import 'package:flutter_wordpress_challenge/model/all_categories.dart';
 
-import '../../model/category_id_two.dart';
 import '../../model/happy_theme.dart';
-import '../post_detail.dart';
 
 /// in sixth step, we will try to get posts by category ID
 ///
@@ -20,12 +18,12 @@ class _TestPageState extends State<TestPage> {
   void initState() {
     super.initState();
     //CategoryIDTwo().getAllPostsByCategoryIDTwo();
-    CategoryIDThree().getAllPostsByCategoryIDThree();
+    AllCategories().getAllCategories();
   }
 
   @override
   Widget build(BuildContext context) {
-    CategoryIDThree postsOfCategoryIDThree = CategoryIDThree();
+    AllCategories allCategories = AllCategories();
     return Scaffold(
       backgroundColor: HappyTheme.shrineErrorRed,
       appBar: AppBar(
@@ -40,12 +38,12 @@ class _TestPageState extends State<TestPage> {
           color: HappyTheme.shrinePink300,
           margin: const EdgeInsets.all(8.0),
           child: FutureBuilder<List>(
-            future: postsOfCategoryIDThree.getAllPostsByCategoryIDThree(),
+            future: allCategories.getAllCategories(),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 if (snapshot.data!.isEmpty) {
                   return const Center(
-                    child: Text('No Post available.'),
+                    child: Text('No Categories available.'),
                   );
                 }
                 return ListView.builder(
@@ -59,49 +57,16 @@ class _TestPageState extends State<TestPage> {
                           children: [
                             Expanded(
                               child: Container(
-                                padding: const EdgeInsets.all(8.0),
-                                width: 150,
-                                height: 150,
-                                child: Image.network(snapshot.data![index]
-                                        ['_embedded']['wp:featuredmedia'][0]
-                                    ['source_url']),
-                              ),
-                            ),
-                            Expanded(
-                              child: Container(
                                 padding: const EdgeInsets.all(10.0),
                                 child: Text(
-                                  snapshot.data![index]['title']['rendered'],
+                                  snapshot.data![index]['name'],
                                   style: HappyTheme.titleStyle,
                                 ),
                               ),
                             ),
                           ],
                         ),
-                        subtitle: Container(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Text(
-                            snapshot.data![index]['content']['rendered']
-                                .toString()
-                                .replaceAll('<p>', '')
-                                .replaceAll('</p>', '')
-                                .replaceAll('<strong>', '')
-                                .replaceAll('</strong>', ''),
-                            maxLines: 4,
-                            overflow: TextOverflow.ellipsis,
-                            style: HappyTheme.contentStyle,
-                          ),
-                        ),
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => PostDetail(
-                                data: snapshot.data![index],
-                              ),
-                            ),
-                          );
-                        },
+                        onTap: () {},
                       ),
                     );
                   },

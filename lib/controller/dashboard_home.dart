@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../view/categories/posts_by_category_id_one.dart';
+
 import 'dashboard_drawer.dart';
 import '../view/latest_posts.dart';
 import '../view/categories/posts_by_category_id_two.dart';
 import '../view/categories/posts_by_category_id_three.dart';
 import '../view/categories/posts_by_category_id_four.dart';
+import '../view/categories/test_page.dart';
 
 class DashBoardHome extends StatefulWidget {
   const DashBoardHome({
@@ -26,8 +28,8 @@ class _DashBoardHomeState extends State<DashBoardHome>
     const Tab(child: Text('OVERALL')),
     const Tab(child: Text('BUSINESS')),
     const Tab(child: Text('ENTERTAINMENT')),
-    //const Tab(child: Text('TSET')),
     const Tab(child: Text('FASHION')),
+    const Tab(child: Text('ALL CATEGORIES')),
   ];
 
   @override
@@ -117,8 +119,8 @@ class _DashBoardHomeState extends State<DashBoardHome>
               PostsByCategoryIDOne(),
               PostsByCategoryIDTwo(),
               PostsByCategoryIDThree(),
-              //TestPage(),
               PostsByCategoryIDFour(),
+              TestPage(),
             ],
           ),
         ),
