@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-import '../model/category_id_two.dart';
-import '../model/happy_theme.dart';
-import 'post_detail.dart';
+import '../../model/category_id_two.dart';
+import '../../model/happy_theme.dart';
+import '../post_detail.dart';
 
 /// in sixth step, we will try to get posts by category ID
 ///
 
-class PostsByCategory extends StatefulWidget {
-  const PostsByCategory({Key? key}) : super(key: key);
+class PostsByCategoryIDTwo extends StatefulWidget {
+  const PostsByCategoryIDTwo({Key? key}) : super(key: key);
 
   @override
-  State<PostsByCategory> createState() => _PostsByCategoryState();
+  State<PostsByCategoryIDTwo> createState() => _PostsByCategoryIDTwoState();
 }
 
-class _PostsByCategoryState extends State<PostsByCategory> {
+class _PostsByCategoryIDTwoState extends State<PostsByCategoryIDTwo> {
   @override
   void initState() {
     super.initState();
